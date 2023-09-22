@@ -1,12 +1,12 @@
-version: "3.8"
+version: '3.8'
 services:
   api:
-    build: ./api
-    container_name: api_c
+    build: ./api # relative path to Dockerfile
+    container_name: api_c # what to call our container
     ports:
-      - '4000:4000'
+      - '4000:4000' # port-mappings (there can be multiple)
     volumes:
-      - ./api:/app
+      - ./api:/app # relative path of local machine to docker-compose-file
       - ./app/node_modules
   myblog:
     build: ./myblog
